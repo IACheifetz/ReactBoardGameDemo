@@ -26,20 +26,20 @@ export default function AuthPage({ setUser }) {
     <div className='auth'>
       <h1><em>Boardzo</em></h1>
       {/* on submit, sign the user in using the function defined above */}
-      <form>
+      <form onSubmit={handleSignIn}>
         <label>
             Email
           {/* on change, update the form state for email */}
-          <input required type="email" name="email" />
+          <input required type="email" name="email" onChange={e => setEmail(e.target.value)}/>
         </label>
         <label>
             Password
           {/* on change, update the form state for password */}
-          <input required type="password" name="password" />
+          <input required type="password" name="password" onChange={e => setPassword(e.target.value)}/>
         </label>
         <button>Sign In</button>
         {/* on clicking sign up, sign the user up using the function defined above */}
-        <button type="button" >Sign Up</button>
+        <button type="button" onClick={handleSignUp}>Sign Up</button>
       </form>
     </div>
   );
