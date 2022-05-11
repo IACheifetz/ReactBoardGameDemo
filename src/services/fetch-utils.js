@@ -37,7 +37,7 @@ export async function createGame(game){
 export async function updateGame(game){
   const response = await client
     .from('board_games')
-    .insert([game]);
+    .update([game]);
 
   return checkError(response);
 }
